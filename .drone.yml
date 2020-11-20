@@ -1,0 +1,69 @@
+kind: pipeline
+type: docker
+name: default
+
+steps:
+- name: '3.6-pipenv'
+  image: plugins/docker
+  settings:
+    username:
+      from_secret: docker_username
+    password:
+      from_secret: docker_password
+    target: production
+    repo: registry.oprax.fr/python
+    registry: registry.oprax.fr
+    tags:
+      - '3.6-pipenv'
+    dockerfile: python-3.6/Dockerfile.pipenv
+  when:
+    branch:
+      - master
+- name: '3.7-pipenv'
+  image: plugins/docker
+  settings:
+    username:
+      from_secret: docker_username
+    password:
+      from_secret: docker_password
+    target: production
+    repo: registry.oprax.fr/python
+    registry: registry.oprax.fr
+    tags:
+      - '3.7-pipenv'
+    dockerfile: python-3.7/Dockerfile.pipenv
+  when:
+    branch:
+      - master
+- name: '3.8-pipenv'
+  image: plugins/docker
+  settings:
+    username:
+      from_secret: docker_username
+    password:
+      from_secret: docker_password
+    target: production
+    repo: registry.oprax.fr/python
+    registry: registry.oprax.fr
+    tags:
+      - '3.8-pipenv'
+    dockerfile: python-3.8/Dockerfile.pipenv
+  when:
+    branch:
+      - master
+- name: '3.9-pipenv'
+  image: plugins/docker
+  settings:
+    username:
+      from_secret: docker_username
+    password:
+      from_secret: docker_password
+    target: production
+    repo: registry.oprax.fr/python
+    registry: registry.oprax.fr
+    tags:
+      - '3.9-pipenv'
+    dockerfile: python-3.9/Dockerfile.pipenv
+  when:
+    branch:
+      - master
