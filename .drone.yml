@@ -10,7 +10,6 @@ steps:
       from_secret: docker_username
     password:
       from_secret: docker_password
-    target: production
     repo: registry.oprax.fr/python
     registry: registry.oprax.fr
     tags:
@@ -26,7 +25,6 @@ steps:
       from_secret: docker_username
     password:
       from_secret: docker_password
-    target: production
     repo: registry.oprax.fr/python
     registry: registry.oprax.fr
     tags:
@@ -42,7 +40,6 @@ steps:
       from_secret: docker_username
     password:
       from_secret: docker_password
-    target: production
     repo: registry.oprax.fr/python
     registry: registry.oprax.fr
     tags:
@@ -58,7 +55,6 @@ steps:
       from_secret: docker_username
     password:
       from_secret: docker_password
-    target: production
     repo: registry.oprax.fr/python
     registry: registry.oprax.fr
     tags:
