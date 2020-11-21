@@ -63,6 +63,7 @@ steps:
     target: builder-base
     tags:
       - '3.9-poetry'
+      - '3-poetry'
     dockerfile: python-3.9/Dockerfile.poetry
   when:
     branch:
@@ -123,6 +124,7 @@ steps:
     registry: registry.oprax.fr
     tags:
       - '3.9-pipenv'
+      - '3-pipenv'
     dockerfile: python-3.9/Dockerfile.pipenv
   when:
     branch:
