@@ -3,6 +3,70 @@ type: docker
 name: default
 
 steps:
+- name: '3.6-poetry'
+  image: plugins/docker
+  settings:
+    username:
+      from_secret: docker_username
+    password:
+      from_secret: docker_password
+    repo: registry.oprax.fr/python
+    registry: registry.oprax.fr
+    target: builder-base
+    tags:
+      - '3.6-poetry'
+    dockerfile: python-3.6/Dockerfile.poetry
+  when:
+    branch:
+      - master
+- name: '3.7-poetry'
+  image: plugins/docker
+  settings:
+    username:
+      from_secret: docker_username
+    password:
+      from_secret: docker_password
+    repo: registry.oprax.fr/python
+    registry: registry.oprax.fr
+    target: builder-base
+    tags:
+      - '3.7-poetry'
+    dockerfile: python-3.7/Dockerfile.poetry
+  when:
+    branch:
+      - master
+- name: '3.8-poetry'
+  image: plugins/docker
+  settings:
+    username:
+      from_secret: docker_username
+    password:
+      from_secret: docker_password
+    repo: registry.oprax.fr/python
+    registry: registry.oprax.fr
+    target: builder-base
+    tags:
+      - '3.8-poetry'
+    dockerfile: python-3.8/Dockerfile.poetry
+  when:
+    branch:
+      - master
+- name: '3.9-poetry'
+  image: plugins/docker
+  settings:
+    username:
+      from_secret: docker_username
+    password:
+      from_secret: docker_password
+    repo: registry.oprax.fr/python
+    registry: registry.oprax.fr
+    target: builder-base
+    tags:
+      - '3.9-poetry'
+    dockerfile: python-3.9/Dockerfile.poetry
+  when:
+    branch:
+      - master
 - name: '3.6-pipenv'
   image: plugins/docker
   settings:
