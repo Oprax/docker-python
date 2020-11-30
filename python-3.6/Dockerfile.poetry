@@ -46,3 +46,7 @@ RUN curl -sSL https://raw.githubusercontent.com/sdispater/poetry/master/get-poet
 
 # copy project requirement files here to ensure they will be cached.
 WORKDIR $PYSETUP_PATH
+
+RUN python -m ensurepip --default-pip \
+    python -m venv $VENV_PATH \
+    $VENV_PATH/bin/pip install -U pip
