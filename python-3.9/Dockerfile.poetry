@@ -29,7 +29,7 @@ ENV PYTHONUNBUFFERED=1 \
 
 
 # prepend poetry and venv to path
-ENV PATH="$POETRY_HOME/bin:$VENV_PATH/bin:$PATH"
+ENV PATH="$PATH:$POETRY_HOME/bin:$VENV_PATH/bin"
 
 
 # `builder-base` stage is used to build deps + create our virtual environment
